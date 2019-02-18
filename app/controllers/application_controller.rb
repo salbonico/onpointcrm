@@ -11,7 +11,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-  	erb :index
+  	if session["user_id"] == nil
+    	erb :index
+  	else
+    	redirect '/users/show'
+  	end
   end
 
   def self.current_user(session)

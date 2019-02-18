@@ -4,7 +4,7 @@ get '/signup' do
   if session["user_id"] == nil
     erb :'/users/create_user'
   else
-    redirect '/'
+    redirect '/users/show'
   end
 end
 
