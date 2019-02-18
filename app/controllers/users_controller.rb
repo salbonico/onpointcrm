@@ -33,7 +33,7 @@ end
 
 post '/signup' do
 if params[:username] != "" && params[:email] != ""
-  user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+  user = User.new(:username => params[:username], :email => params[:email], :name => params[:fullname], :password => params[:password])
     if user.save
       session[:user_id] = user.id
       redirect "/courses"

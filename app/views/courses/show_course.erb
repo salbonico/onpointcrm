@@ -1,5 +1,5 @@
 <h1><%= @course.title %></h1>
 <h2><%= @course.description %></h2>
-<h4>Taught by: <%= @course.user.username %></h4>
-<button <%='hidden' if @rights == 0 %> onclick='window.location.href="/courses/<%= @course.id %>/edit";'>Edit Course</button>
-<button <%='hidden' if @rights == 0 %> onclick='window.location.href="/courses/<%= @course.id %>/delete";'>Delete Course</button>
+<h4>Taught by: <%= @course.user.name %></h4>
+<button <%='hidden' if session["user_id"] != @course.user_id %> onclick='window.location.href="/courses/<%= @course.id %>/edit";'>Edit Course</button>
+<button <%='hidden' if session["user_id"] != @course.user_id %> onclick='window.location.href="/courses/<%= @course.id %>/delete";'>Delete Course</button>

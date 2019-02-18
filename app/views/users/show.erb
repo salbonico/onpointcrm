@@ -1,6 +1,8 @@
 
 <ul>
-  <h1>Welcome, <%= @user.username %></h1>
+  <h1>Welcome, <%= @user.name %></h1>
+  <p>Email: <%= @user.email %></p>
+  <p>Username: <%= @user.username %></p>
   <h2> Classes you are currently teaching;</h2>
 <% @user.courses.each do |course| %>
   <li> <a href="/courses/<%= course.id %>"><b><%= course.title %></b></a> <br> <%= course.description %></li>
