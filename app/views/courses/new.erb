@@ -1,0 +1,13 @@
+<h1>Create a new Course</h1>
+<form action="/courses" method="post">
+
+<input type="hidden" value="<%= @user.id %>" name="user_id">
+
+<label for="title">Course Title:</label>
+<input type ="text" id="title" name="title"><br>
+
+<label for="description">Course Description:</label>
+<textarea rows ="5" id="description" name="description"></textarea><br><br>
+
+<button type="submit" value="submit">submit</button>
+</form>

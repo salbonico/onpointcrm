@@ -1,4 +1,3 @@
-
 class CoursesController < ApplicationController
 
 	get '/courses' do

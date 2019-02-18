@@ -1,0 +1,15 @@
+<h1>Edit Course</h1>
+<form action="/courses/<%= @course.id %>" method="post">
+<input id="hidden" type="hidden" name="_method" value="patch">
+
+<h2><%= @course.title %></h2>
+<h3><%= @course.description %></h3>
+
+<label for="title">Course Title:</label>
+<input type ="text" id="title" name="title"><br>
+
+<label for="description">Course Description:</label>
+<textarea rows ="5" id="description" name="description"></textarea><br><br>
+
+<button type="submit" value="submit">submit</button>
+</form>
