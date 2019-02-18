@@ -3,7 +3,9 @@
   <h1>Welcome, <%= @user.username %></h1>
   <h2> Classes you are currently teaching;</h2>
 <% @user.courses.each do |course| %>
-  <li> <b><%= course.title %></b> <br> <%= course.description %></li><br>
+  <li> <a href="/courses/<%= course.id %>"><b><%= course.title %></b></a> <br> <%= course.description %></li>
+  <button onclick='window.location.href="/courses/<%= course.id %>/edit";'>Edit Course</button>
+<button onclick='window.location.href="/courses/<%= course.id %>/delete";'>Delete Course</button><br><br>
 <% end %>
 </ul>
 

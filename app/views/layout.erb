@@ -7,10 +7,10 @@
 
     <div class="container">
       <h1>Welcome to the OnPoint Leadership Academy Learning Portal!</h1>
-    	<button <%='hidden' if @rights == 0 %> onclick='window.location.href="/users/show";'>My Courses</button>
-    	<button <%='hidden' if @rights == 0 %> onclick='window.location.href="/courses";'>All Courses</button>
-    	<button <%='hidden' if @rights == 0 %> onclick='window.location.href="/courses/new";'>New Course</button>
-    	<button <%='hidden' if @rights == 0 %> onclick='window.location.href="/logout";'>Logout</button>
+    	<button <%='hidden' if session["user_id"] == nil %> onclick='window.location.href="/users/show";'>My Courses</button>
+    	<button <%='hidden' if session["user_id"] == nil %> onclick='window.location.href="/courses";'>All Courses</button>
+    	<button <%='hidden' if session["user_id"] == nil %> onclick='window.location.href="/courses/new";'>New Course</button>
+    	<button <%='hidden' if session["user_id"] == nil %> onclick='window.location.href="/logout";'>Logout</button>
     	<hr>
       <%= yield %>
     </div>
